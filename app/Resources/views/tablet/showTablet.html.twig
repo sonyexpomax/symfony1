@@ -1,0 +1,57 @@
+{% extends "./baseShow.html.twig" %}
+
+{% block body %}
+    {% for tablet in tablets %}
+        <h3>{{ tablet.name }}</h3>
+            <div class="col">
+                <img class="main-page-img"  src="{{ tablet.image }}" alt="Example" />
+            </div>
+            <div class="col">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Characteristic</th>
+                        <th scope="col">Value</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Display</td>
+                        <td>{{ tablet.display }}</td>
+                    </tr>
+                    <tr>
+                        <td>Display resolution</td>
+                        <td>{{ tablet.displayResolution }}</td>
+                    </tr>
+                    <tr>
+                        <td>Hdd</td>
+                        <td>{{ tablet.hdd }}</td>
+                    </tr>
+                    <tr>
+                        <td>ROM</td>
+                        <td>{{ tablet.rom }}</td>
+                    </tr>
+                    <tr>
+                        <td>Web camera</td>
+                        <td>{{ tablet.webcam }}</td>
+                    </tr>
+                    <tr>
+                        <td>Processor type</td>
+                        <td>{{ tablet.processor }}</td>
+                    </tr>
+                    <tr>
+                        <td>Processor frequency</td>
+                        <td>{{ tablet.processorFriquency }}</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+        <p>{{ tablet.description }}</p>
+
+    {% endfor %}
+{% endblock %}
+
+

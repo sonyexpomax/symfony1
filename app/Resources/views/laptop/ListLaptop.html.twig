@@ -1,0 +1,23 @@
+{% extends "./baseList.html.twig" %}
+
+{% block hello %}
+    <h2>Shop Laptops</h2>
+    <p>We have best selections of laptops in our region!!</p>
+{% endblock %}
+
+
+{% block body %}
+        {% for laptop in allLaptops %}
+            <div class="col-6 col-lg-4">
+                <a class="header-link" href="{{ path('showLaptop',{'id':laptop.id})}}">{{ laptop.name }}</a>
+                <a href="{{ path('showLaptop',{'id':laptop.id})}}">
+                        <img class="main-page-img"  src="{{ laptop.images }}" alt="Example" />
+                </a>
+                <p style="text-align: justify">{{ laptop.description }}</p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div><!--/span-->
+        {% endfor %}
+{% endblock %}
+
+
+

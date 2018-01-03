@@ -1,0 +1,75 @@
+{% extends "./baseShow.html.twig" %}
+
+{% block body %}
+        <h3>{{ laptops.name }}</h3>
+            <div class="col">
+                <img class="main-page-img"  src="{{ laptops.images }}" alt="Example" />
+            </div>
+            <div class="col">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Characteristic</th>
+                        <th scope="col">Value</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Display</td>
+                        <td>{{ laptops.display }}</td>
+                    </tr>
+                    <tr>
+                        <td>Operation system</td>
+                        <td>{{ laptops.os }}</td>
+                    </tr>
+                    <tr>
+                        <td>Hdd</td>
+                        <td>{{ laptops.hdd }}</td>
+                    </tr>
+                    <tr>
+                        <td>ROM</td>
+                        <td>{{ laptops.rom }}</td>
+                    </tr>
+                    <tr>
+                        <td>Web camera</td>
+                        <td>{{ laptops.webCam }}</td>
+                    </tr>
+                    <tr>
+                        <td>Processor type</td>
+                        <td>{{ laptops.processor }}</td>
+                    </tr>
+                    <tr>
+                        <td>Lan</td>
+                        <td>{{ laptops.lan }}</td>
+                    </tr>
+                    <tr>
+                        <td>Wi-Fi</td>
+                        <td>{{ laptops.wifi }}</td>
+                    </tr>
+                    <tr>
+                        <td>Bluetooth</td>
+                        <td>{{ laptops.bluetooth }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Color</td>
+                        <td>{{ laptops.color }}</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+<div class="col-md-12"><p>{{ laptops.description }}</p></div>
+        <h3>Comments</h3>
+
+   {% endblock %}
+
+
+
+ {% block javascripts %}
+     <script src="{{ asset('js/addComments.js') }}"></script>
+     <script>
+         requestComments('/laptop/{{ laptops.id }}/comments');
+     </script>
+ {% endblock %}

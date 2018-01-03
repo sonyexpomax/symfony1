@@ -1,0 +1,22 @@
+{% extends "./baseList.html.twig" %}
+
+{% block hello %}
+    <h2>Shop Tablets</h2>
+    <p>We have best selections of tablets in our region!!</p>
+{% endblock %}
+
+
+{% block body %}
+        {% for tablet in allTablets %}
+            <div class="col-6 col-lg-4">
+                <a class="header-link" href="{{ path('showTablet',{'id':tablet.id})}}">{{ tablet.name }}</a>
+                <a href="{{ path('showTablet',{'id':tablet.id})}}">
+                    <img class="main-page-img"  src="{{ tablet.image }}" alt="Example" />
+                </a>
+                <p style="text-align: justify">{{ tablet.description }}</p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div><!--/span-->
+        {% endfor %}
+{% endblock %}
+
+
